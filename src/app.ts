@@ -11,8 +11,9 @@
 //   // data.split('');
 // })
 
-function merge(objA: object, objB: object) {
+function merge<T, U>(objA: T, objB: U) {
   return Object.assign(objA, objB);
 }
 
-console.log(merge({name: 'Max'}, {age: 30}));
+const mergedObj = merge({name: 'Max'}, {age: 30});
+// console.log(mergedObj.age); supposed to print 30
