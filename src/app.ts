@@ -59,3 +59,9 @@ class DataStorage<T> {
     return [...this.data];
   }
 }
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem('Max');
+textStorage.addItem('Manu');
+textStorage.removeItem('Max');
+console.log(textStorage.getItems());
