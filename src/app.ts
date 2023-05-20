@@ -51,7 +51,7 @@ class DataStorage<T extends string | number | boolean> {
     this.data.push(item);
   }
 
-  removeItem<U>(item: T) {
+  removeItem(item: T) {
     if (this.data.indexOf(item) === -1) {
       return;
     }
@@ -71,10 +71,28 @@ console.log(textStorage.getItems());
 
 const numberStorage = new DataStorage<number>();
 
-
 // const objStorage = new DataStorage<object>();
 // const maxObj = { name: "Max" };
 // objStorage.addItem(maxObj);
 // objStorage.addItem({ name: "Manu" });
 // objStorage.removeItem(maxObj);
 // console.log(objStorage.getItems());
+
+// examples of built in utility types
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  return courseGoal as CourseGoal;
+}
