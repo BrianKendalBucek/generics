@@ -65,3 +65,5 @@ textStorage.addItem('Max');
 textStorage.addItem('Manu');
 textStorage.removeItem('Max');
 console.log(textStorage.getItems());
+
+const numberStorage = new DataStorage<number>();
